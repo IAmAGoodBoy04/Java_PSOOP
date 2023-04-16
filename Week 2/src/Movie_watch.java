@@ -43,9 +43,10 @@ class User{
             System.out.println("You cannot watch this movie or balance is insufficient");
         }
     }
-    void printbal(){
+    float printbal(){
         System.out.println("The updated balance is: "+ acc_balance);
-    }//prints balance
+        return acc_balance;
+    }//prints balance and returns updated balance to update the balance variable in main
 }
 public class Movie_watch {
     public static void main(String[] args) {
@@ -94,7 +95,7 @@ public class Movie_watch {
                 System.out.println("Do you want to watch this movie? (enter 1 for yes, 0 for no)");
                 if(sc.nextInt()==1){
                     usr.Watch();
-                    usr.printbal();
+                    usr_bal=usr.printbal();
                 }
             }
             System.out.println("Enter 0 to exit program, 1 to check for another movie");
