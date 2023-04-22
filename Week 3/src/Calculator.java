@@ -79,6 +79,17 @@ class Calci {
         }
         else if(op=='l'){
             ans= calc_log(x,y);
+            int tempans= (int) Math.round(ans);
+            if(tempans-ans>0){
+                if(tempans-ans<0.000001){
+                    ans=tempans;
+                }
+                else{
+                    if(ans-tempans<0.000001){
+                        ans=tempans;
+                    }
+                }
+            }
         }
     }
 }
