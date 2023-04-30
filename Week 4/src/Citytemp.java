@@ -65,7 +65,7 @@ public class Citytemp {
         // Looping through the cities to find the temperature for the given day and city
         for(int x=0;x<cities;x++){
             if(citynames[x].equals(city)){
-                tempsearch=temps[day][x];
+                tempsearch=temps[day-1][x];
             }
         }
         // Printing the temperature for the given day and city if input is valid
