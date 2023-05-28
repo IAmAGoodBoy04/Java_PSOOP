@@ -44,7 +44,7 @@ class Employee {
         return bonus;
     }
 
-    public void getBonus(float bonus) {
+    public void setBonus(float bonus) {
         this.bonus = bonus;
     }
 
@@ -63,8 +63,12 @@ class Intern extends Employee {
     }
 
     @Override
-    public void getBonus(float bonus) {
+    public void setBonus(float bonus) {
         internbonus = bonus;
+    }
+    @Override
+    public float getBonus() {
+        return internbonus;
     }
 }
 
@@ -81,8 +85,12 @@ class Clerk extends Employee {
     }
 
     @Override
-    public void getBonus(float bonus) {
+    public void setBonus(float bonus) {
         Clerkbonus = bonus;
+    }
+    @Override
+    public float getBonus() {
+        return Clerkbonus;
     }
 }
 
@@ -99,8 +107,12 @@ class Manager extends Employee {
     }
 
     @Override
-    public void getBonus(float bonus) {
+    public void setBonus(float bonus) {
         Managerbonus = bonus;
+    }
+    @Override
+    public float getBonus() {
+        return Managerbonus;
     }
 }
 
@@ -111,12 +123,12 @@ public class employees {
         Clerk clerk1 = new Clerk();
         Manager manager1 = new Manager();
         System.out.println("Enter values of bonus for Intern, clerk and manager respectively:");
-        intern1.getBonus(sc.nextFloat());
-        clerk1.getBonus(sc.nextFloat());
-        manager1.getBonus(sc.nextFloat());
-        System.out.printf(
-                "The values of salary(including bonus) for intern, clerk and manager respectively are: %f, %f and %f respectively",
-                intern1.getSalary(), clerk1.getSalary(), manager1.getSalary());
+        intern1.setBonus(sc.nextFloat());
+        clerk1.setBonus(sc.nextFloat());
+        manager1.setBonus(sc.nextFloat());
+        System.out.printf("The salary of Intern is: %.2f (with %.2f%% bonus)\n",intern1.getSalary(),intern1.getBonus());
+        System.out.printf("The salary of Clerk is: %.2f (with %.2f%% bonus)\n",clerk1.getSalary(),clerk1.getBonus());
+        System.out.printf("The salary of Manager is: %.2f (with %.2f%% bonus)\n",manager1.getSalary(),manager1.getBonus());
         sc.close();
     }
 }
